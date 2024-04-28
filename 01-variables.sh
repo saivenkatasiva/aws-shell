@@ -1,3 +1,5 @@
 #!/bin/bash
-echo "Ramesh::good morning suresh"
-echo "suresh::good morning ramesh"
+PERSON1=RAMESH
+PERSON2=SURESH
+echo "$PERSON1::good morning $PERSON2"
+echo "$PERSON2:good morning $PERSON1"
