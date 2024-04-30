@@ -35,11 +35,11 @@ dnf install mongodb-org -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB"
 
-systemctl enable mongod &>> $LOGFILE
+systemctl enable mongodb &>> $LOGFILE
 
 VALIDATE $? "enabiling MongoDB"
 
-systemctl start mongod &>> $LOGFILE
+systemctl start mongodb &>> $LOGFILE
 
 VALIDATE $? "starting MongoDB"
 
@@ -47,6 +47,6 @@ sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
 VALIDATE $? "remote access to MongoDB"
 
-systemctl restart mongod &>> $LOGFILE
+systemctl restart mongodb &>> $LOGFILE
 
 VALIDATE $? "restarting MongoDB"
