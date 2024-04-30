@@ -39,5 +39,5 @@ do
     else
         echo -e "$package is already installed ... $Y skipping $N"
     fi
-    exit 1
+    
 done
