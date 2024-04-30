@@ -14,6 +14,7 @@ VALIDATE (){
     if [ $1 -ne 0 ]
     then
         echo -e "$2 ... $R failed $N"
+        exit 1
     else
         echo -e "$2 ... $G success $N"
     fi
@@ -35,7 +36,7 @@ dnf install mongodb-org -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB"
 
-systemctl enable mongodb &>> $LOGFILE
+systemctl enable mongod &>> $LOGFILE
 
 VALIDATE $? "enabiling MongoDB"
 
@@ -47,6 +48,6 @@ sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
 VALIDATE $? "remote access to MongoDB"
 
-systemctl restart mongodb &>> $LOGFILE
+systemctl restart mongod &>> $LOGFILE
 
 VALIDATE $? "restarting MongoDB"
