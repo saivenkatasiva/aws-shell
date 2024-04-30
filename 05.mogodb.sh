@@ -22,9 +22,9 @@ VALIDATE (){
 if [ $ID -ne 0 ]
 then
     echo -e "$R please run the code with root user $N"
+    exit 1
 else
     echo -e "$G you are a root user $N"
-exit 1
 fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
