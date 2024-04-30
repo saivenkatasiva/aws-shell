@@ -37,7 +37,6 @@ do
         yum install $package -y &>> $LOGFILE
         VALIDATE $? "installation of $package"
     else
-        echo -e "$package is already installed $Y skipping $N"
+        echo -e "$package is already installed$Y skipping $N"
     fi
 done
-
