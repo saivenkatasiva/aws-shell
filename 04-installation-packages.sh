@@ -22,9 +22,9 @@ VALIDATE () {
 if [ $ID -ne 0 ]
 then
     echo -e "$R ERROR, PLEASE LOGIN WITH ROOT USER $N"
+    exit 1
 else
     echo -e "$G you are a root user $N"
-    exit 1
 fi
 
   #echo "all arguments passed: $@"
