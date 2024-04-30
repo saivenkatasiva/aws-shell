@@ -30,11 +30,11 @@ fi
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
-VALIDATE $? "copied MongoDB repo"
+VALIDATE $? "Copied MongoDB Repo"
 
-dnf install mongod-org -y &>> $LOGFILE
+dnf install mongodb-org -y &>> $LOGFILE
 
-VALIDATE $? "Installing MongoDB"
+VALIDATE $? "Installing MongDB"
 
 systemctl enable mongod &>> $LOGFILE
 
